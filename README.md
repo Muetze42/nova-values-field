@@ -2,6 +2,9 @@
 
 This field is a clone of the [KeyValue field](https://nova.laravel.com/docs/4.0/resources/fields.html#keyvalue-field) without keys.
 
+![form](https://raw.githubusercontent.com/Muetze42/asset-repo/main/nova-values-field/images/form.png "form")  
+![detail](https://raw.githubusercontent.com/Muetze42/asset-repo/main/nova-values-field/images/detail.png "detail")
+
 ## Install
 ```
 composer require norman-huth/nova-values-field
