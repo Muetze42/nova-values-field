@@ -1,11 +1,27 @@
 {
     "name": "norman-huth/nova-values-field",
-    "description": "A Laravel Nova field.",
+    "description": "This field is a clone of the KeyValue field without keys.",
     "keywords": [
         "laravel",
-        "nova"
+        "nova",
+        "laravel-nova",
+        "laravel-nova-field",
+        "nova-fields",
+        "nova-4"
     ],
+    "homepage": "https://github.com/Muetze42/nova-values-field",
+    "support": {
+        "issues": "https://github.com/Muetze42/nova-values-field/issues",
+        "source": "https://github.com/Muetze42/nova-values-field",
+        "docs": "https://github.com/Muetze42/nova-values-field#readme"
+    },
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Norman Huth",
+            "homepage": "https://huth.it"
+        }
+    ],
     "require": {
         "php": "^8.0"
     },
