@@ -17,7 +17,6 @@ class Values extends Field
     protected function fillAttributeFromRequest(NovaRequest $request, $requestAttribute, $model, $attribute)
     {
         if ($request->exists($requestAttribute)) {
-            appLog($request->all());
             $model->{$attribute} = json_decode($request[$requestAttribute], true);
         }
     }
