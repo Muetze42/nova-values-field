@@ -24,6 +24,7 @@
     ],
     "require": {
         "php": "^8.0",
+        "laravel/nova": "^4.0",
         "nova-kit/nova-packages-tool": "^1.0"
     },
     "autoload": {

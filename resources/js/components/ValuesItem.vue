@@ -1,22 +1,22 @@
 <template>
     <div v-if="isNotObject" class="flex items-center key-value-item">
-        <div class="flex flex-grow border-b border-gray-300 dark:border-gray-700 key-value-fields"
-             :class="{ 'bg-gray-50': readOnlyKeys || !isEditable }"
+        <div class="flex flex-grow border-b border-gray-200 dark:border-gray-700 key-value-fields"
         >
                 <textarea
                     :dusk="`key-value-key-${index}`"
                     v-model="item.key"
                     @focus="handleKeyFieldFocus"
                     ref="keyField"
+                    rows="1"
                     type="text"
-                    class="font-mono text-sm resize-none block min-h-input w-full form-control form-input form-input-row py-4 text-90 dark:text-gray-400 bg-clip-border"
-                    :disabled="!isEditable || readOnlyKeys"
+                    class="font-mono text-xs block w-full px-3 py-3 text-90 dark:text-gray-400"
+                    :readonly="!isEditable || readOnlyKeys"
                     style="background-clip: border-box"
                     :class="{
-                    'bg-white dark:bg-gray-800': !isEditable || readOnlyKeys,
-                    'hover:bg-20 focus:bg-white dark:bg-gray-900 dark:focus:bg-gray-900':
-                      isEditable && !readOnlyKeys,
-                  }"
+                        'bg-white dark:bg-gray-800 focus:outline-none': !isEditable,
+                        'hover:bg-20 focus:bg-white dark:bg-gray-900 dark:focus:bg-gray-900 focus:outline-none focus:ring focus:ring-inset':
+                        isEditable,
+                    }"
                 />
         </div>
 
