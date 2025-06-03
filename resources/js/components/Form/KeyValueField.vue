@@ -30,23 +30,20 @@
                 </div>
             </FormKeyValueTable>
 
-            <div
-                class="mr-11"
-                v-if="
-          !currentlyIsReadonly &&
-          !currentField.readonlyKeys &&
-          currentField.canAddRow
-        "
-            >
-                <button
+            <div class="flex items-center justify-center">
+                <Button
+                    v-if="
+            !currentlyIsReadonly &&
+            !currentField.readonlyKeys &&
+            currentField.canAddRow
+          "
                     @click="addRowAndSelect"
                     :dusk="`${field.attribute}-add-key-value`"
-                    type="button"
-                    class="cursor-pointer focus:outline-none focus:ring focus:ring-offset-4 dark:focus:ring-offset-gray-800 rounded-lg mx-auto text-primary-500 font-bold link-default mt-3 px-3 rounded-b-lg flex items-center"
+                    leading-icon="plus-circle"
+                    variant="link"
                 >
-                    <Icon type="plus-circle"/>
-                    <span class="ml-1">{{ currentField.actionText }}</span>
-                </button>
+                    {{ currentField.actionText }}
+                </Button>
             </div>
         </template>
     </DefaultField>
@@ -58,7 +55,8 @@ import map from 'lodash/map'
 import tap from 'lodash/tap'
 import ValuesHeader from "../ValuesHeader";
 import ValuesItem from "../ValuesItem";
-import {DependentFormField, HandlesValidationErrors} from 'laravel-nova'
+import { DependentFormField, HandlesValidationErrors } from 'laravel-nova'
+import { Button } from 'laravel-nova-ui'
 
 function guid() {
     var S4 = function () {
@@ -83,12 +81,13 @@ function guid() {
 export default {
     mixins: [HandlesValidationErrors, DependentFormField],
 
-    data: () => ({theData: []}),
-
     components: {
+        Button,
         ValuesHeader,
         ValuesItem,
     },
+
+    data: () => ({theData: []}),
 
     mounted() {
         this.theData = map(this.value || {}, (key) => ({

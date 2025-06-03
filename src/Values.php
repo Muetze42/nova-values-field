@@ -14,7 +14,7 @@ class Values extends Field
      */
     public $component = 'values';
 
-    protected function fillAttributeFromRequest(NovaRequest $request, $requestAttribute, $model, $attribute)
+    protected function fillAttributeFromRequest(NovaRequest $request, string $requestAttribute, object $model, string $attribute): void
     {
         if ($request->exists($requestAttribute)) {
             $model->{$attribute} = json_decode($request[$requestAttribute], true);
